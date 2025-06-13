@@ -17,7 +17,7 @@ function App() {
     }
     return(
         <>
-            <h1>Test Interazioni</h1>
+            <h1>Conta Maledizioni</h1>
             {!error ? (
                 <>
                     <button className="add-Card" onClick={handleClick}>+</button>

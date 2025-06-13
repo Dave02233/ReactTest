@@ -1,14 +1,18 @@
 import React, {useState} from "react";
 import "./Button.css";
 
-function Button() {
+function Button(props) {
     const [count, setCount] = useState(0);
     const handleClickIncrement = () => setCount(count + 1);
-    const handleClickDecrement = () => setCount(count - 1);
+    const handleClickDecrement = () => count > 0 ? setCount(count - 1) : null;
+
 
     return(
         <div className="button-container">
-            <h1>Value: {count}</h1>
+            {props.children
+            ? props.children
+            : null}
+            <h2>Maledizioni: {count}</h2>
             <button onClick={handleClickIncrement}>Increment</button>
             <button onClick={handleClickDecrement}>Decrement</button>
         </div>
