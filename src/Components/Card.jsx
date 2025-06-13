@@ -4,24 +4,43 @@ import "./Card.css";
 
 function Card() {
     const [visibleData, setVisibleData] = useState(false);
-    const handleClick = () => setVisibleData(!visibleData);
     const [name, setName]  = useState("G. Biffi");
+    const [inputDisabled, setInputDisabled] = useState(false);
 
-    function HandleName(event) {
+
+    function handleClick() {
+        setVisibleData(!visibleData);
+    } 
+    
+    function handleName(event) {
         setName(event.target.value);
+    }
+    function handleEnded() {
+        setInputDisabled(true);
     }
 
     return (
         <div className="card-container">
-            <button id="toggleVisibility" onClick={HandleName}>
+            <button id="toggleVisibility" onClick={handleClick}>
                 {visibleData 
-                ? "Nascondi"
+                ? "Reset"
                 : "Mostra"
                 }
             </button>
             {visibleData
-            ? <Button><input type="text" value={name} onChange={changeName}/></Button>
-            : <h1>Click to show the buttons</h1>}
+            ? <Button>
+                {visibleData && (
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={handleName}
+                        onBlur={handleEnded}
+                        onKeyDown={e => e.key === "Enter" ? handleEnded() : null}
+                        disabled={inputDisabled}
+                    />
+                )}
+            </Button>
+            : <h1>Clicca per mostrare il conteggio</h1>}
         </div>
     )
 }

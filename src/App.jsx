@@ -26,7 +26,7 @@ function App() {
                     ))}
                 </>
             ) : (
-                <h2>Errore: <br></br> Troppe Card</h2>
+                <h2>Errore: <br></br> Troppe persone maledette</h2>
             )}
         </>
     )

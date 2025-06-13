@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
 
-    width: fit-content;
+    width: 20%;
     padding: 1rem;
 
     justify-content: center;
@@ -13,6 +13,13 @@
 
     border: 1px solid #225f9f;
     border-radius: 20px;
+
+    input{
+        width: 90%;
+        height: 1.1rem;
+        border-radius: 10px;
+        text-align: center;
+    }
 
     #toggleVisibility {
         border-radius: 5px;
