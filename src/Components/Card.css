@@ -33,3 +33,11 @@
         color: antiquewhite;
     }
 }
+
+@media only screen and (max-width: 800px) {
+    .card-container {
+        width: 90%;
+        margin: 0.5rem auto;
+    }
+    
+}
